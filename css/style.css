@@ -48,50 +48,59 @@ header h1{
 .container{
     text-align: center;
     padding: 50px;
+
 }
-/* .container{
-    
-    display: grid;
-    padding: 50px 15px;
-    
-    margin: auto;
-    /* display: flex;
-    flex-direction: row;
-    /*background-color: white;
-    font-family: 'Open Sans', sans-serif;
-    font-weight: 100;
-    position: relative;
-    min-height: 100vh; */
 
 .container p{
-    margin-left: 25px;
-    margin-right: 25px;
+    margin-left: 5px;
+    margin-right: 5px;
     padding-top: 10px;
 }
 
-#summary_intro{
-    font-weight: 400;
-    text-decoration-style: bold;
-}
-
 #headshot{
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    max-width: 100%;
+    max-width: 80%;
 }
 
-#welcome{
-    display: hidden;
-    background-attachment: fixed; /* Parallax effect */     
-    background-position: center;  /* Parallax effect */
-    background-repeat: no-repeat; /* Parallax effect */
-    background-size: cover;      /* Parallax effect */
+.flip-card{
+    background-color: transparent;
+    align-items: center;
+    height: 100px;
+    width: 85vw;
+    margin: auto;
+    padding: auto;
+    justify-content: center;
+    font-size: 10px;
+}
+
+.inner{
+    position: relative;
+    text-align: center;
+    transition: transform 0.5s;
+    text-align: center;
+}
+
+.flip-card:hover .inner{
+    transform: rotateY(180deg);
+}
+
+.front, .back{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+}
+
+.front{
+    background-color: transparent;
+    transform: rotateY(180deg);
     color: white;
-    height: 400px;                /* Parallax effect */
-    background-image: url("../images/orli_headshot.jpg");
-    grid-column: 1 / -1;  /*Can you explain what this does?*/
-    grid-row: 1 / auto;   /*Can you rewrite it?*/
+}
+
+.back{
+    position: absolute;
+    background-color: #3792cb;
+    color: white;
 }
 
 footer{
@@ -154,6 +163,23 @@ footer p{
     text-decoration: none;
     display: block;
   }
+
+.page_display h2{
+    display: none;
+}
+
+.page_display #active{
+    display: block;
+    align-items: center;
+    position: absolute;
+    color: black;
+    background-color: #3792cb; 
+    text-align: center;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    min-width: 160px;
+    width: 100vw;
+}
+
   
   /* Change color of dropdown links on hover */
   .dropdown-content a:hover {background-color: #3792cb;}
@@ -168,9 +194,9 @@ footer p{
 .experience{
     display: grid;
     grid-template-columns: auto auto;
-    grid-template-rows: auto auto auto auto auto auto auto;
+    grid-template-rows: auto auto auto auto auto auto auto auto;
     align-items: center;
-    justify-items: center;
+    justify-content: center;
     font-family: 'Poppins', sans-serif;
 }
 
@@ -179,6 +205,7 @@ footer p{
     color: black;
     font-style: italic;
     padding-bottom: 0;
+    margin-bottom: 10px;
 }
 .experience p{
     font-style: italic;
@@ -193,11 +220,14 @@ footer p{
     list-style-type: disc;
     text-align: left;
     font-size: .75em;
+    margin-left: 8px;
     padding: 3px;
 }
 
 .experience div{
     padding: 20px;
+    align-items: center;
+    justify-content: center;
 }
 
 #puroclean{
@@ -245,7 +275,27 @@ footer p{
     font-size: 1em;
 }
 
+.skills{
+    background-attachment: fixed; /* Parallax effect */     
+    background-position: center;  /* Parallax effect */
+    background-repeat: no-repeat; /* Parallax effect */
+    background-size: cover;      /* Parallax effect */
+    color: white;
+    height: 200px;                /* Parallax effect */
+    background-image: url("../images/code-wallpaper-10.jpg");
+    opacity: 1.5;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    scroll-behavior: smooth;
+}
 
+.skills p{
+    font-weight: bold;
+    font-size: 20px;
+    
+    /* background-color: black; */
+}
 /* About Me Page */
 .gallery{
     display: flex;
@@ -323,16 +373,17 @@ input:hover{
 }
 
 #submit:hover{
-    background: black;
+    background-color: black;
+    color: white;
 }
 
 #submit{
     margin: 10px;
     text-align: center;
-    width: 20%;
+    width: 60%;
+    color: black;
     border: solid 1px black;
     background-color: #3792cb;
-    color: white;
     cursor: pointer;
 }
 
@@ -342,6 +393,10 @@ input::placeholder, textarea::placeholder {
   
 label{
     display: none;
+}
+
+#connect{
+    font-weight: 600;
 }
 /* Different media screens*/
 @media screen and (min-width: 700px){
@@ -376,6 +431,20 @@ label{
         align-items: center;
         padding: 5px;
         background-color: white;
+    }
+
+    #submit{
+        width:20%;
+    }
+
+    .container p{
+        margin-left: 25px;
+        margin-right: 25px;
+        padding-top: 10px;
+    }
+
+    .page_display{
+        display: none;
     }
 }
 
