@@ -446,6 +446,17 @@ label{
         text-align: left;
     }
 
+    #headshot{
+        height: 350px;
+        width: 80vw;
+    }
+
+    .home{
+        display: grid;
+        grid-template-rows: 400px 400px;
+        grid-template-columns: 1fr;
+    }
+
     .home #summary_intro{
         padding-bottom: 5px;
     }
@@ -536,14 +547,15 @@ label{
 
     .home{
         display: grid;
-        grid-template-rows: 400px 130px;
+        grid-template-rows: 400px 175px;
         grid-template-columns: 1fr;
     }
 
     #headshot{
         grid-row: 1 / span 1;
         grid-column: 1 / span 1;
-        height: 400px;
+        height: 350px;
+        width: 85vw;
         justify-content: center;
     }
 
